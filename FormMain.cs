@@ -27,5 +27,17 @@ namespace beerus
         {
             Application.Exit();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            FormRentCar f = new FormRentCar();
+            f.ShowDialog();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            FormCustomer f = new FormCustomer(); 
+            f.ShowDialog();
+        }
     }
 }

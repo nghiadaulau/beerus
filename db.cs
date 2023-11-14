@@ -12,8 +12,8 @@ namespace beerus
     {
         protected private static string DBName = "midterm";
 
-        public static string _Access = @"Data Source=;Initial Catalog='" + DBName + "';User ID=;Password=";
-
+        //public static string _Access = @"Data Source=;Initial Catalog='" + DBName + "';User ID=;Password=";
+        public static string _Access = @"Data Source=13.213.28.166;Initial Catalog='" + DBName + "';User ID=sa;Password=LikeAndSubscribe!1";
         public static SqlConnection cn = new SqlConnection(_Access);
         public static SqlCommand cm = new SqlCommand("", cn);
         public static SqlDataAdapter da = new SqlDataAdapter();

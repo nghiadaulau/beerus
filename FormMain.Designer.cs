@@ -41,18 +41,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Black", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(239, 51);
+            label1.Location = new Point(273, 68);
             label1.Name = "label1";
-            label1.Size = new Size(724, 54);
+            label1.Size = new Size(911, 67);
             label1.TabIndex = 0;
             label1.Text = "WELCOME TO RENTAL CAR SYSTEM";
             // 
             // btnManageCar
             // 
             btnManageCar.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            btnManageCar.Location = new Point(239, 162);
+            btnManageCar.Location = new Point(273, 216);
+            btnManageCar.Margin = new Padding(3, 4, 3, 4);
             btnManageCar.Name = "btnManageCar";
-            btnManageCar.Size = new Size(290, 104);
+            btnManageCar.Size = new Size(331, 139);
             btnManageCar.TabIndex = 1;
             btnManageCar.Text = "Car";
             btnManageCar.UseVisualStyleBackColor = true;
@@ -61,29 +62,34 @@
             // btnCustomer
             // 
             btnCustomer.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCustomer.Location = new Point(673, 162);
+            btnCustomer.Location = new Point(769, 216);
+            btnCustomer.Margin = new Padding(3, 4, 3, 4);
             btnCustomer.Name = "btnCustomer";
-            btnCustomer.Size = new Size(290, 104);
+            btnCustomer.Size = new Size(331, 139);
             btnCustomer.TabIndex = 2;
             btnCustomer.Text = "Customer";
             btnCustomer.UseVisualStyleBackColor = true;
+            btnCustomer.Click += btnCustomer_Click;
             // 
             // btnOrder
             // 
             btnOrder.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            btnOrder.Location = new Point(239, 321);
+            btnOrder.Location = new Point(273, 428);
+            btnOrder.Margin = new Padding(3, 4, 3, 4);
             btnOrder.Name = "btnOrder";
-            btnOrder.Size = new Size(290, 104);
+            btnOrder.Size = new Size(331, 139);
             btnOrder.TabIndex = 3;
-            btnOrder.Text = "Order";
+            btnOrder.Text = "Rent Car";
             btnOrder.UseVisualStyleBackColor = true;
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnSchedule
             // 
             btnSchedule.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSchedule.Location = new Point(673, 321);
+            btnSchedule.Location = new Point(769, 428);
+            btnSchedule.Margin = new Padding(3, 4, 3, 4);
             btnSchedule.Name = "btnSchedule";
-            btnSchedule.Size = new Size(290, 104);
+            btnSchedule.Size = new Size(331, 139);
             btnSchedule.TabIndex = 4;
             btnSchedule.Text = "Schedule";
             btnSchedule.UseVisualStyleBackColor = true;
@@ -91,18 +97,20 @@
             // btnStatistic
             // 
             btnStatistic.Font = new Font("Microsoft Sans Serif", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            btnStatistic.Location = new Point(239, 488);
+            btnStatistic.Location = new Point(273, 651);
+            btnStatistic.Margin = new Padding(3, 4, 3, 4);
             btnStatistic.Name = "btnStatistic";
-            btnStatistic.Size = new Size(724, 104);
+            btnStatistic.Size = new Size(827, 139);
             btnStatistic.TabIndex = 5;
             btnStatistic.Text = "Statistic";
             btnStatistic.UseVisualStyleBackColor = true;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(1043, 12);
+            btnExit.Location = new Point(1192, 16);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(75, 54);
+            btnExit.Size = new Size(86, 72);
             btnExit.TabIndex = 6;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -110,9 +118,9 @@
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1130, 690);
+            ClientSize = new Size(1291, 920);
             Controls.Add(btnExit);
             Controls.Add(btnStatistic);
             Controls.Add(btnSchedule);
@@ -120,6 +128,7 @@
             Controls.Add(btnCustomer);
             Controls.Add(btnManageCar);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormMain";
             Text = "FormMain";
             ResumeLayout(false);

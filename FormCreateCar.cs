@@ -85,5 +85,10 @@ namespace beerus
             cmbType.SelectedIndex = 0;
             f.LoadCars();
         }
+
+        private void FormCreateCar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

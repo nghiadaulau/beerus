@@ -43,7 +43,7 @@
             lblWelcome.Font = new Font("Sans Serif Collection", 30F, FontStyle.Regular, GraphicsUnit.Point);
             lblWelcome.Location = new Point(54, 24);
             lblWelcome.Name = "lblWelcome";
-            lblWelcome.Size = new Size(779, 99);
+            lblWelcome.Size = new Size(962, 123);
             lblWelcome.TabIndex = 0;
             lblWelcome.Text = "RENTAL CAR SYSTEM";
             // 
@@ -51,15 +51,15 @@
             // 
             txtUserName.Location = new Point(240, 200);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(384, 25);
+            txtUserName.Size = new Size(384, 30);
             txtUserName.TabIndex = 1;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(160, 203);
+            lblUsername.Location = new Point(143, 203);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(74, 19);
+            lblUsername.Size = new Size(91, 23);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Username:";
             // 
@@ -76,9 +76,9 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(160, 264);
+            lblPassword.Location = new Point(143, 264);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 19);
+            lblPassword.Size = new Size(84, 23);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Password:";
             // 
@@ -86,7 +86,7 @@
             // 
             txtPassword.Location = new Point(241, 261);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(384, 25);
+            txtPassword.Size = new Size(384, 30);
             txtPassword.TabIndex = 5;
             // 
             // btnExit
@@ -102,7 +102,7 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(888, 536);
             Controls.Add(btnExit);
