@@ -39,6 +39,10 @@
             ColDel = new DataGridViewButtonColumn();
             btnExit = new Button();
             btnCreateNewCar = new Button();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
+            btnReset = new Button();
+            btnImport = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVCarManage).BeginInit();
             SuspendLayout();
             // 
@@ -120,7 +124,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(748, 12);
+            btnExit.Location = new Point(910, 12);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(40, 38);
             btnExit.TabIndex = 2;
@@ -130,19 +134,60 @@
             // 
             // btnCreateNewCar
             // 
-            btnCreateNewCar.Location = new Point(548, 12);
+            btnCreateNewCar.Location = new Point(716, 12);
             btnCreateNewCar.Name = "btnCreateNewCar";
-            btnCreateNewCar.Size = new Size(179, 38);
+            btnCreateNewCar.Size = new Size(121, 38);
             btnCreateNewCar.TabIndex = 3;
             btnCreateNewCar.Text = "Create New Car";
             btnCreateNewCar.UseVisualStyleBackColor = true;
             btnCreateNewCar.Click += btnCreateNewCar_Click;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(355, 12);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(63, 38);
+            btnSearch.TabIndex = 4;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(424, 21);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(217, 23);
+            txtSearch.TabIndex = 5;
+            // 
+            // btnReset
+            // 
+            btnReset.Location = new Point(647, 12);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(63, 38);
+            btnReset.TabIndex = 6;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
+            // 
+            // btnImport
+            // 
+            btnImport.ImageAlign = ContentAlignment.MiddleRight;
+            btnImport.Location = new Point(843, 12);
+            btnImport.Name = "btnImport";
+            btnImport.Size = new Size(64, 38);
+            btnImport.TabIndex = 7;
+            btnImport.Text = "Import";
+            btnImport.UseVisualStyleBackColor = true;
             // 
             // FormCarManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(962, 534);
+            Controls.Add(btnImport);
+            Controls.Add(btnReset);
+            Controls.Add(txtSearch);
+            Controls.Add(btnSearch);
             Controls.Add(btnCreateNewCar);
             Controls.Add(btnExit);
             Controls.Add(dGVCarManage);
@@ -167,5 +212,9 @@
         private DataGridViewTextBoxColumn car_type;
         private DataGridViewButtonColumn ColEdit;
         private DataGridViewButtonColumn ColDel;
+        private Button btnSearch;
+        private TextBox txtSearch;
+        private Button btnReset;
+        private Button btnImport;
     }
 }

@@ -81,5 +81,37 @@ namespace beerus
         {
 
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text.Length == 0 || txtSearch.Text == "")
+            {
+                LoadCars();
+            }
+            else
+            {
+                int i = 0;
+                string query = "SELECT * FROM car " +
+                               "WHERE brand LIKE '%' + @searchValue + '%' OR " +
+                               "model LIKE '%' + @searchValue + '%' OR " +
+                               "car_type LIKE '%' + @searchValue + '%';";
+                dGVCarManage.Rows.Clear();
+                db.cn.Open();
+                db.cm = new System.Data.SqlClient.SqlCommand(query, db.cn);
+                db.cm.Parameters.AddWithValue("@searchValue", txtSearch.Text);
+                db.dr = db.cm.ExecuteReader();
+                while (db.dr.Read())
+                {
+                    i++;
+                    dGVCarManage.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4]);
+                }
+                db.cn.Close();
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            LoadCars();
+        }
     }
 }
