@@ -41,7 +41,6 @@
             btnCreateNewCar = new Button();
             btnSearch = new Button();
             txtSearch = new TextBox();
-            btnReset = new Button();
             btnImport = new Button();
             ((System.ComponentModel.ISupportInitialize)dGVCarManage).BeginInit();
             SuspendLayout();
@@ -52,22 +51,28 @@
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(0, -1);
             label1.Name = "label1";
-            label1.Size = new Size(349, 54);
+            label1.Size = new Size(433, 67);
             label1.TabIndex = 0;
             label1.Text = "Car Management";
+            label1.Click += label1_Click;
             // 
             // dGVCarManage
             // 
+            dGVCarManage.AllowUserToAddRows = false;
+            dGVCarManage.AllowUserToDeleteRows = false;
             dGVCarManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dGVCarManage.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dGVCarManage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dGVCarManage.Columns.AddRange(new DataGridViewColumn[] { CarID, Name, Brand, Model, car_type, ColEdit, ColDel });
-            dGVCarManage.Location = new Point(12, 56);
+            dGVCarManage.Location = new Point(14, 75);
+            dGVCarManage.Margin = new Padding(3, 4, 3, 4);
             dGVCarManage.Name = "dGVCarManage";
+            dGVCarManage.ReadOnly = true;
             dGVCarManage.RowHeadersVisible = false;
+            dGVCarManage.RowHeadersWidth = 51;
             dGVCarManage.RowTemplate.Height = 25;
             dGVCarManage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dGVCarManage.Size = new Size(950, 479);
+            dGVCarManage.Size = new Size(1086, 639);
             dGVCarManage.TabIndex = 1;
             dGVCarManage.CellClick += dGVCarManage_CellClick;
             dGVCarManage.CellContentClick += dGVCarManage_CellContentClick;
@@ -76,57 +81,72 @@
             // 
             CarID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             CarID.HeaderText = "#";
+            CarID.MinimumWidth = 6;
             CarID.Name = "CarID";
+            CarID.ReadOnly = true;
             // 
             // Name
             // 
             Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Name.HeaderText = "Name";
+            Name.MinimumWidth = 6;
             Name.Name = "Name";
+            Name.ReadOnly = true;
             // 
             // Brand
             // 
             Brand.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Brand.HeaderText = "Brand";
+            Brand.MinimumWidth = 6;
             Brand.Name = "Brand";
+            Brand.ReadOnly = true;
             // 
             // Model
             // 
             Model.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Model.HeaderText = "Model";
+            Model.MinimumWidth = 6;
             Model.Name = "Model";
-            Model.Width = 66;
+            Model.ReadOnly = true;
+            Model.Width = 81;
             // 
             // car_type
             // 
             car_type.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             car_type.HeaderText = "Car Type";
+            car_type.MinimumWidth = 6;
             car_type.Name = "car_type";
-            car_type.Width = 77;
+            car_type.ReadOnly = true;
+            car_type.Width = 95;
             // 
             // ColEdit
             // 
             ColEdit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ColEdit.HeaderText = "Edit";
+            ColEdit.MinimumWidth = 6;
             ColEdit.Name = "ColEdit";
+            ColEdit.ReadOnly = true;
             ColEdit.Text = "Edit";
             ColEdit.UseColumnTextForButtonValue = true;
-            ColEdit.Width = 33;
+            ColEdit.Width = 41;
             // 
             // ColDel
             // 
             ColDel.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             ColDel.HeaderText = "Delete";
+            ColDel.MinimumWidth = 6;
             ColDel.Name = "ColDel";
+            ColDel.ReadOnly = true;
             ColDel.Text = "Delete";
             ColDel.UseColumnTextForButtonValue = true;
-            ColDel.Width = 46;
+            ColDel.Width = 59;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(910, 12);
+            btnExit.Location = new Point(1060, 13);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(40, 38);
+            btnExit.Size = new Size(40, 27);
             btnExit.TabIndex = 2;
             btnExit.Text = "X";
             btnExit.UseVisualStyleBackColor = true;
@@ -134,9 +154,10 @@
             // 
             // btnCreateNewCar
             // 
-            btnCreateNewCar.Location = new Point(716, 12);
+            btnCreateNewCar.Location = new Point(804, 13);
+            btnCreateNewCar.Margin = new Padding(3, 4, 3, 4);
             btnCreateNewCar.Name = "btnCreateNewCar";
-            btnCreateNewCar.Size = new Size(121, 38);
+            btnCreateNewCar.Size = new Size(138, 51);
             btnCreateNewCar.TabIndex = 3;
             btnCreateNewCar.Text = "Create New Car";
             btnCreateNewCar.UseVisualStyleBackColor = true;
@@ -144,9 +165,10 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(355, 12);
+            btnSearch.Location = new Point(726, 13);
+            btnSearch.Margin = new Padding(3, 4, 3, 4);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(63, 38);
+            btnSearch.Size = new Size(72, 51);
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -154,44 +176,41 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(424, 21);
+            txtSearch.Location = new Point(461, 28);
+            txtSearch.Margin = new Padding(3, 4, 3, 4);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(217, 23);
+            txtSearch.Size = new Size(247, 27);
             txtSearch.TabIndex = 5;
-            // 
-            // btnReset
-            // 
-            btnReset.Location = new Point(647, 12);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(63, 38);
-            btnReset.TabIndex = 6;
-            btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
-            btnReset.Click += btnReset_Click;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // btnImport
             // 
             btnImport.ImageAlign = ContentAlignment.MiddleRight;
-            btnImport.Location = new Point(843, 12);
+            btnImport.Location = new Point(948, 13);
+            btnImport.Margin = new Padding(3, 4, 3, 4);
             btnImport.Name = "btnImport";
-            btnImport.Size = new Size(64, 38);
+            btnImport.Size = new Size(73, 51);
             btnImport.TabIndex = 7;
             btnImport.Text = "Import";
             btnImport.UseVisualStyleBackColor = true;
+            btnImport.Click += btnImport_Click;
             // 
             // FormCarManage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(962, 534);
+            BackColor = Color.FromArgb(255, 255, 192);
+            ClientSize = new Size(1104, 712);
             Controls.Add(btnImport);
-            Controls.Add(btnReset);
             Controls.Add(txtSearch);
             Controls.Add(btnSearch);
             Controls.Add(btnCreateNewCar);
             Controls.Add(btnExit);
             Controls.Add(dGVCarManage);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
+            //Name = "FormCarManage";
             Text = "FormCarManage";
             Load += FormCarManage_Load;
             ((System.ComponentModel.ISupportInitialize)dGVCarManage).EndInit();
@@ -214,7 +233,6 @@
         private DataGridViewButtonColumn ColDel;
         private Button btnSearch;
         private TextBox txtSearch;
-        private Button btnReset;
         private Button btnImport;
     }
 }

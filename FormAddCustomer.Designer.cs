@@ -37,8 +37,9 @@
             label3 = new Label();
             txtName = new TextBox();
             label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnCreate = new Button();
+            btnExit = new Button();
+            btnUpdate = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -129,25 +130,36 @@
             label2.TabIndex = 0;
             label2.Text = "Name";
             // 
-            // button1
+            // btnCreate
             // 
-            button1.Location = new Point(311, 456);
-            button1.Name = "button1";
-            button1.Size = new Size(181, 42);
-            button1.TabIndex = 2;
-            button1.Text = "Create";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnCreate.Location = new Point(311, 456);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(181, 42);
+            btnCreate.TabIndex = 2;
+            btnCreate.Text = "Create";
+            btnCreate.UseVisualStyleBackColor = true;
+            btnCreate.Click += button1_Click;
             // 
-            // button2
+            // btnExit
             // 
-            button2.Location = new Point(52, 456);
-            button2.Name = "button2";
-            button2.Size = new Size(181, 42);
-            button2.TabIndex = 3;
-            button2.Text = "Exit";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnExit.Location = new Point(52, 456);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(181, 42);
+            btnExit.TabIndex = 3;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += button2_Click;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.Location = new Point(311, 456);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(181, 42);
+            btnUpdate.TabIndex = 4;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Visible = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // FormAddCustomer
             // 
@@ -155,13 +167,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 192);
             ClientSize = new Size(555, 523);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnExit);
+            Controls.Add(btnCreate);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormAddCustomer";
             Text = "FormAddCustomer";
+            Load += FormAddCustomer_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -172,15 +186,16 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private Panel panel2;
         private Label label2;
-        private TextBox txtAddress;
         private Label label4;
-        private TextBox txtPhone;
         private Label label3;
-        private TextBox txtName;
-        private Button button1;
-        private Button button2;
+        public TextBox txtAddress;
+        public TextBox txtPhone;
+        public TextBox txtName;
+        public Button btnCreate;
+        public Button btnExit;
+        public Button btnUpdate;
+        public Label label1;
     }
 }

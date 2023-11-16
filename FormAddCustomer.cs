@@ -34,6 +34,7 @@ namespace beerus
             txtPhone.Clear();
             txtAddress.Clear();
             customer.loadCustomer();
+            Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,6 +44,28 @@ namespace beerus
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Dispose();
+        }
+
+        private void FormAddCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            db.cn.Open();
+            db.cm = new System.Data.SqlClient.SqlCommand("update customer set name=@name, phone=@phone, address=@address where customer_id='" + db._id + "'", db.cn);
+            db.cm.Parameters.AddWithValue("@name", txtName.Text);
+            db.cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+            db.cm.Parameters.AddWithValue("@address", txtAddress.Text);
+            db.cm.ExecuteNonQuery();
+            MessageBox.Show("Customer has been updated");
+            db.cn.Close();
+            txtName.Clear();
+            txtPhone.Clear();
+            txtAddress.Clear();
+            customer.loadCustomer();
             Dispose();
         }
     }

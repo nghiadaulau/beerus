@@ -25,14 +25,13 @@ namespace beerus
 
         public void LoadCars()
         {
-            int i = 0;
+
             dGVCarManage.Rows.Clear();
             db.cn.Open();
             db.cm = new System.Data.SqlClient.SqlCommand("select * from car", db.cn);
             db.dr = db.cm.ExecuteReader();
             while (db.dr.Read())
             {
-                i++;
                 dGVCarManage.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4]);
             }
             db.cn.Close();
@@ -90,7 +89,7 @@ namespace beerus
             }
             else
             {
-                int i = 0;
+
                 string query = "SELECT * FROM car " +
                                "WHERE brand LIKE '%' + @searchValue + '%' OR " +
                                "model LIKE '%' + @searchValue + '%' OR " +
@@ -102,16 +101,26 @@ namespace beerus
                 db.dr = db.cm.ExecuteReader();
                 while (db.dr.Read())
                 {
-                    i++;
                     dGVCarManage.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4]);
                 }
                 db.cn.Close();
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
             LoadCars();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            FormImportCarFromExcel f = new FormImportCarFromExcel();
+            f.ShowDialog();
         }
     }
 }
