@@ -30,6 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             dgvRead = new DataGridView();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            brandDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            modelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            cartypeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            carBindingSource2 = new BindingSource(components);
             carBindingSource = new BindingSource(components);
             label1 = new Label();
             label2 = new Label();
@@ -39,16 +44,11 @@
             btnImport = new Button();
             panel1 = new Panel();
             carBindingSource1 = new BindingSource(components);
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            brandDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            modelDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            cartypeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            carBindingSource2 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dgvRead).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)carBindingSource2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)carBindingSource).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)carBindingSource1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)carBindingSource2).BeginInit();
             SuspendLayout();
             // 
             // dgvRead
@@ -68,6 +68,46 @@
             dgvRead.RowTemplate.Height = 29;
             dgvRead.Size = new Size(563, 327);
             dgvRead.TabIndex = 0;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            nameDataGridViewTextBoxColumn.HeaderText = "name";
+            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
+            nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            brandDataGridViewTextBoxColumn.HeaderText = "brand";
+            brandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            brandDataGridViewTextBoxColumn.ReadOnly = true;
+            brandDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            modelDataGridViewTextBoxColumn.HeaderText = "model";
+            modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            modelDataGridViewTextBoxColumn.ReadOnly = true;
+            modelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // cartypeDataGridViewTextBoxColumn
+            // 
+            cartypeDataGridViewTextBoxColumn.DataPropertyName = "car_type";
+            cartypeDataGridViewTextBoxColumn.HeaderText = "car_type";
+            cartypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            cartypeDataGridViewTextBoxColumn.Name = "cartypeDataGridViewTextBoxColumn";
+            cartypeDataGridViewTextBoxColumn.ReadOnly = true;
+            cartypeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // carBindingSource2
+            // 
+            carBindingSource2.DataSource = typeof(Car);
             // 
             // carBindingSource
             // 
@@ -145,46 +185,6 @@
             // 
             carBindingSource1.DataSource = typeof(Car);
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            nameDataGridViewTextBoxColumn.HeaderText = "name";
-            nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ReadOnly = true;
-            nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
-            brandDataGridViewTextBoxColumn.HeaderText = "brand";
-            brandDataGridViewTextBoxColumn.MinimumWidth = 6;
-            brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            brandDataGridViewTextBoxColumn.ReadOnly = true;
-            brandDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            modelDataGridViewTextBoxColumn.DataPropertyName = "model";
-            modelDataGridViewTextBoxColumn.HeaderText = "model";
-            modelDataGridViewTextBoxColumn.MinimumWidth = 6;
-            modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            modelDataGridViewTextBoxColumn.ReadOnly = true;
-            modelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // cartypeDataGridViewTextBoxColumn
-            // 
-            cartypeDataGridViewTextBoxColumn.DataPropertyName = "car_type";
-            cartypeDataGridViewTextBoxColumn.HeaderText = "car_type";
-            cartypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            cartypeDataGridViewTextBoxColumn.Name = "cartypeDataGridViewTextBoxColumn";
-            cartypeDataGridViewTextBoxColumn.ReadOnly = true;
-            cartypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // carBindingSource2
-            // 
-            carBindingSource2.DataSource = typeof(Car);
-            // 
             // FormImportCarFromExcel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -200,11 +200,12 @@
             Name = "FormImportCarFromExcel";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Read Excel File";
+            Load += FormImportCarFromExcel_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRead).EndInit();
+            ((System.ComponentModel.ISupportInitialize)carBindingSource2).EndInit();
             ((System.ComponentModel.ISupportInitialize)carBindingSource).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)carBindingSource1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)carBindingSource2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

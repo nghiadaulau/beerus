@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -107,6 +108,45 @@ namespace beerus
                 MessageBox.Show("Customer has been deleted");
                 db.cn.Close();
                 loadCustomer();
+            }
+        }
+        private List<Customer> getData()
+        {
+            List<Customer> customerList = new List<Customer>();
+            for(int i = 0; i< dgvCustomer.Rows.Count; i++) {
+                Customer customer = new Customer();
+                customer.customer_id = (int)dgvCustomer.Rows[i].Cells[0].Value;
+                customer.name = dgvCustomer.Rows[i].Cells[1].Value.ToString();
+                customer.phone = dgvCustomer.Rows[i].Cells[2].Value.ToString();
+                customer.address = dgvCustomer.Rows[i].Cells[3].Value.ToString();
+                customerList.Add(customer);
+            }
+            return customerList;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx"})
+            {
+                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var fileInfo = new FileInfo(saveFileDialog.FileName);
+                        using (var package = new ExcelPackage(fileInfo))
+                        {
+                            ExcelWorksheet excelWorksheet = package.Workbook.Worksheets.Add("customers");
+                            excelWorksheet.Cells.LoadFromCollection<Customer>(getData(), true);
+                            package.Save();
+                        }
+                        MessageBox.Show("Successfully Export Data To Excel File!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                    }
+                    
+                }
             }
         }
     }

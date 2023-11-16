@@ -38,6 +38,7 @@
             ColDelete = new DataGridViewButtonColumn();
             label1 = new Label();
             panel2 = new Panel();
+            btnExport = new Button();
             txtSearch = new TextBox();
             btnExit = new Button();
             btnSearch = new Button();
@@ -55,7 +56,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 62);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1072, 476);
+            panel1.Size = new Size(1129, 476);
             panel1.TabIndex = 0;
             // 
             // dgvCustomer
@@ -71,10 +72,9 @@
             dgvCustomer.ReadOnly = true;
             dgvCustomer.RowHeadersWidth = 51;
             dgvCustomer.RowTemplate.Height = 29;
-            dgvCustomer.Size = new Size(1070, 474);
+            dgvCustomer.Size = new Size(1127, 474);
             dgvCustomer.TabIndex = 0;
             dgvCustomer.CellClick += dgvCustomer_CellClick;
-            
             // 
             // Column1
             // 
@@ -145,6 +145,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(btnExport);
             panel2.Controls.Add(txtSearch);
             panel2.Controls.Add(btnExit);
             panel2.Controls.Add(btnSearch);
@@ -153,20 +154,30 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1072, 62);
+            panel2.Size = new Size(1129, 62);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
+            // btnExport
+            // 
+            btnExport.Location = new Point(955, 11);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(95, 38);
+            btnExport.TabIndex = 5;
+            btnExport.Text = "Export";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
+            // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(437, 17);
+            txtSearch.Location = new Point(426, 17);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(239, 27);
             txtSearch.TabIndex = 4;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(1016, 3);
+            btnExit.Location = new Point(1073, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(43, 29);
             btnExit.TabIndex = 3;
@@ -176,7 +187,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(695, 11);
+            btnSearch.Location = new Point(680, 11);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(119, 38);
             btnSearch.TabIndex = 3;
@@ -186,9 +197,9 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(844, 11);
+            btnCreate.Location = new Point(831, 11);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(124, 38);
+            btnCreate.Size = new Size(99, 38);
             btnCreate.TabIndex = 2;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -199,7 +210,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
-            ClientSize = new Size(1072, 538);
+            ClientSize = new Size(1129, 538);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Name = "FormCustomer";
@@ -228,5 +239,6 @@
         private DataGridViewButtonColumn ColDelete;
         private Button btnExit;
         private TextBox txtSearch;
+        private Button btnExport;
     }
 }

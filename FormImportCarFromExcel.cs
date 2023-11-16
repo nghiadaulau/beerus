@@ -67,7 +67,7 @@ namespace beerus
                 carBindingSource2.DataSource = carList;
             }
         }
-        
+
         private void btnImport_Click(object sender, EventArgs e)
         {
             try
@@ -85,12 +85,17 @@ namespace beerus
                 }
                 db.cn.Close();
                 MessageBox.Show("Success");
-                
-                }
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormImportCarFromExcel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
