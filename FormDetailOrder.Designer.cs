@@ -51,15 +51,17 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1076, 84);
+            panel1.Size = new Size(1132, 63);
             panel1.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(1040, 3);
+            button1.Location = new Point(910, 2);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(33, 30);
+            button1.Size = new Size(29, 22);
             button1.TabIndex = 1;
             button1.Text = "x";
             button1.UseVisualStyleBackColor = true;
@@ -69,9 +71,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(432, 9);
+            label1.Location = new Point(378, 7);
             label1.Name = "label1";
-            label1.Size = new Size(280, 62);
+            label1.Size = new Size(226, 51);
             label1.TabIndex = 0;
             label1.Text = "Order Detail";
             // 
@@ -83,12 +85,13 @@
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv.Columns.AddRange(new DataGridViewColumn[] { CustomerName, Phone, Address, CarName, Brand, Model, CarType, DateTime });
             dgv.Dock = DockStyle.Fill;
-            dgv.Location = new Point(0, 84);
+            dgv.Location = new Point(0, 63);
+            dgv.Margin = new Padding(3, 2, 3, 2);
             dgv.Name = "dgv";
             dgv.ReadOnly = true;
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(1076, 102);
+            dgv.Size = new Size(1132, 94);
             dgv.TabIndex = 1;
             // 
             // CustomerName
@@ -157,14 +160,15 @@
             // 
             // FormDetailOrder
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = SystemColors.Info;
-            ClientSize = new Size(1076, 186);
+            ClientSize = new Size(1132, 157);
             Controls.Add(dgv);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormDetailOrder";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormDetailOrder";

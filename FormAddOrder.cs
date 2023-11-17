@@ -43,14 +43,17 @@ namespace beerus
         private void loadCars()
         {
             db.cn.Open();
-            SqlCommand command = new SqlCommand("select car_id from Car", db.cn);
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            dataAdapter.SelectCommand = command;
-            DataTable dt = new DataTable();
-            dataAdapter.Fill(dt);
-
-            carID.DataSource = dt;
-            carID.DisplayMember = "car_id";
+            db.cm = new System.Data.SqlClient.SqlCommand("select * from car", db.cn);
+            db.dr = db.cm.ExecuteReader();
+            List<Car> carList = new List<Car>();
+            while (db.dr.Read())
+            {
+                Car car = new Car { car_id = Convert.ToInt32(db.dr[0]), name = db.dr[1].ToString() };
+                carList.Add(car);
+            }
+            db.cn.Close();
+            carID.DataSource = carList;
+            carID.DisplayMember = "name";
             carID.ValueMember = "car_id";
             db.cn.Close();
         }
