@@ -16,12 +16,29 @@ namespace beerus
     {
         FormOrder formOrder = new FormOrder();
         private string fuel = "";
+        private Dictionary<string, int> featureDict = new Dictionary<string, int>();
+        private int fuel_id;
         public FormAddOrder(FormOrder formOrder)
         {
             InitializeComponent();
             this.formOrder = formOrder;
-        }
+            loadDictFeature();
 
+        }
+        private void loadDictFeature()
+        {
+            db.cn.Open();
+            db.cm = new System.Data.SqlClient.SqlCommand("select * from feature", db.cn);
+            db.dr = db.cm.ExecuteReader();
+            while (db.dr.Read())
+            {
+                int featureId = Convert.ToInt32(db.dr[0]);
+                string featureName = Convert.ToString(db.dr[1]);
+                //this.featureDict.Add(featureId, featureName);
+                this.featureDict.Add(featureName, featureId);
+            }
+            db.cn.Close();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -57,31 +74,59 @@ namespace beerus
             carID.ValueMember = "car_id";
             db.cn.Close();
         }
-        private string getCheckBoxValue()
+
+        private string getCheckBoxValue(Control container)
         {
-            string result = "";
-            foreach (Control control in this.Controls)
+            StringBuilder result = new StringBuilder();
+            foreach (Control control in container.Controls)
             {
-                if (control is CheckBox)
+                if (control is CheckBox checkBox && checkBox.Checked)
                 {
-                    CheckBox checkBox = (CheckBox)control;
-                    if (checkBox.Checked)
+                    if (featureDict.ContainsKey(checkBox.Text))
                     {
-                        result = checkBox.Text + " " + result;
+                        int temp;
+                        if (featureDict.TryGetValue(checkBox.Text, out temp))
+                        {
+                            result.Append(temp).Append(",");
+                        }
                     }
                 }
+                if (control.HasChildren)
+                {
+                    result.Append(getCheckBoxValue(control));
+                }
+            }
+            return result.ToString();
+        }
+        private int getFuelValue()
+        {
+            int result = 4;
+            if (radioAll.Checked)
+            {
+                return 4;
+            }else if (radioGasoline.Checked)
+            {
+                return 1;
+            }
+            else if (radioOil.Checked)
+            {
+                return 2;
+            }
+            else if (radioElectronic.Checked)
+            {
+                return 3;
             }
             return result;
         }
         private void addOrder()
         {
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("insert into [order] (customer_id, car_id, rent_time, feature, fuel) values (@customer_id, @car_id, @rent_time, @feature, @fuel)", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("insert into [order] (customer_id, car_id, rent_time, features_id, fuel_id) values (@customer_id, @car_id, @rent_time, @features_id, @fuel_id)", db.cn);
             db.cm.Parameters.AddWithValue("@customer_id", coBoxCustomer.SelectedValue.ToString());
             db.cm.Parameters.AddWithValue("@car_id", carID.SelectedValue.ToString());
             db.cm.Parameters.AddWithValue("@rent_time", datetime.Value);
-            db.cm.Parameters.AddWithValue("@feature", getCheckBoxValue());
-
+            db.cm.Parameters.AddWithValue("@features_id", getCheckBoxValue(this));
+            db.cm.Parameters.AddWithValue("@fuel_id", getFuelValue());
             db.cm.ExecuteNonQuery();
             MessageBox.Show("Order has been created");
             db.cn.Close();

@@ -31,10 +31,10 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            radioElectronic = new RadioButton();
+            radioOil = new RadioButton();
+            radioGasoline = new RadioButton();
+            radioAll = new RadioButton();
             label6 = new Label();
             checkBox14 = new CheckBox();
             checkBox13 = new CheckBox();
@@ -89,10 +89,10 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Ivory;
-            panel2.Controls.Add(radioButton4);
-            panel2.Controls.Add(radioButton3);
-            panel2.Controls.Add(radioButton2);
-            panel2.Controls.Add(radioButton1);
+            panel2.Controls.Add(radioElectronic);
+            panel2.Controls.Add(radioOil);
+            panel2.Controls.Add(radioGasoline);
+            panel2.Controls.Add(radioAll);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(checkBox14);
             panel2.Controls.Add(checkBox13);
@@ -120,49 +120,49 @@
             panel2.Size = new Size(603, 482);
             panel2.TabIndex = 1;
             // 
-            // radioButton4
+            // radioElectronic
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(436, 435);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(95, 24);
-            radioButton4.TabIndex = 27;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Electronic";
-            radioButton4.UseVisualStyleBackColor = true;
+            radioElectronic.AutoSize = true;
+            radioElectronic.Location = new Point(436, 435);
+            radioElectronic.Name = "radioElectronic";
+            radioElectronic.Size = new Size(95, 24);
+            radioElectronic.TabIndex = 27;
+            radioElectronic.TabStop = true;
+            radioElectronic.Text = "Electronic";
+            radioElectronic.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioOil
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(311, 435);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(94, 24);
-            radioButton3.TabIndex = 26;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Diesel Oil";
-            radioButton3.UseVisualStyleBackColor = true;
+            radioOil.AutoSize = true;
+            radioOil.Location = new Point(311, 435);
+            radioOil.Name = "radioOil";
+            radioOil.Size = new Size(94, 24);
+            radioOil.TabIndex = 26;
+            radioOil.TabStop = true;
+            radioOil.Text = "Diesel Oil";
+            radioOil.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioGasoline
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(208, 435);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(87, 24);
-            radioButton2.TabIndex = 25;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Gasoline";
-            radioButton2.UseVisualStyleBackColor = true;
+            radioGasoline.AutoSize = true;
+            radioGasoline.Location = new Point(208, 435);
+            radioGasoline.Name = "radioGasoline";
+            radioGasoline.Size = new Size(87, 24);
+            radioGasoline.TabIndex = 25;
+            radioGasoline.TabStop = true;
+            radioGasoline.Text = "Gasoline";
+            radioGasoline.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioAll
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(139, 435);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(48, 24);
-            radioButton1.TabIndex = 24;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "All";
-            radioButton1.UseVisualStyleBackColor = true;
+            radioAll.AutoSize = true;
+            radioAll.Location = new Point(139, 435);
+            radioAll.Name = "radioAll";
+            radioAll.Size = new Size(48, 24);
+            radioAll.TabIndex = 24;
+            radioAll.TabStop = true;
+            radioAll.Text = "All";
+            radioAll.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -455,9 +455,9 @@
         private Label label6;
         private CheckBox checkBox14;
         private CheckBox checkBox13;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
+        private RadioButton radioGasoline;
+        private RadioButton radioAll;
+        private RadioButton radioElectronic;
+        private RadioButton radioOil;
     }
 }
