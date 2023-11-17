@@ -51,13 +51,14 @@
             lblCreateCar.Size = new Size(393, 67);
             lblCreateCar.TabIndex = 0;
             lblCreateCar.Text = "Create New Car";
+            lblCreateCar.Click += lblCreateCar_Click;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(427, 23);
+            btnExit.Location = new Point(474, 0);
             btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(54, 61);
+            btnExit.Size = new Size(46, 29);
             btnExit.TabIndex = 1;
             btnExit.Text = "x";
             btnExit.UseVisualStyleBackColor = true;
@@ -179,6 +180,7 @@
             Controls.Add(label1);
             Controls.Add(btnExit);
             Controls.Add(lblCreateCar);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormCreateCar";
             Text = "FormCreateCar";

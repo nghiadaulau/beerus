@@ -30,14 +30,19 @@ namespace beerus
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            FormRentCar f = new FormRentCar();
+            FormOrder f = new FormOrder();
             f.ShowDialog();
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            FormCustomer f = new FormCustomer(); 
+            FormCustomer f = new FormCustomer();
             f.ShowDialog();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

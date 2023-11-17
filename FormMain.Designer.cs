@@ -79,7 +79,7 @@
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(331, 139);
             btnOrder.TabIndex = 3;
-            btnOrder.Text = "Rent Car";
+            btnOrder.Text = "Order";
             btnOrder.UseVisualStyleBackColor = true;
             btnOrder.Click += btnOrder_Click;
             // 
@@ -107,10 +107,10 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(1192, 16);
+            btnExit.Location = new Point(1218, 13);
             btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(86, 72);
+            btnExit.Size = new Size(61, 40);
             btnExit.TabIndex = 6;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -128,9 +128,11 @@
             Controls.Add(btnCustomer);
             Controls.Add(btnManageCar);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormMain";
             Text = "FormMain";
+            Load += FormMain_Load;
             ResumeLayout(false);
             PerformLayout();
         }

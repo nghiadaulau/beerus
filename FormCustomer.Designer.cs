@@ -177,7 +177,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(1073, 3);
+            btnExit.Location = new Point(1081, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(43, 29);
             btnExit.TabIndex = 3;
@@ -213,6 +213,7 @@
             ClientSize = new Size(1129, 538);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormCustomer";
             Text = "FormCustomer";
             Load += FormCustomer_Load;

@@ -113,7 +113,8 @@ namespace beerus
         private List<Customer> getData()
         {
             List<Customer> customerList = new List<Customer>();
-            for(int i = 0; i< dgvCustomer.Rows.Count; i++) {
+            for (int i = 0; i < dgvCustomer.Rows.Count; i++)
+            {
                 Customer customer = new Customer();
                 customer.customer_id = (int)dgvCustomer.Rows[i].Cells[0].Value;
                 customer.name = dgvCustomer.Rows[i].Cells[1].Value.ToString();
@@ -126,9 +127,9 @@ namespace beerus
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx"})
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
             {
-                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
@@ -141,11 +142,11 @@ namespace beerus
                         }
                         MessageBox.Show("Successfully Export Data To Excel File!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error );
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 }
             }
         }
