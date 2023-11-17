@@ -13,7 +13,7 @@ namespace beerus
         public string brand { get; set; }
         public string model { get; set; }
         public string car_type { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
 
         public override string ToString()
         {

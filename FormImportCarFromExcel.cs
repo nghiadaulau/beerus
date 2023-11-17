@@ -62,6 +62,14 @@ namespace beerus
                     car.brand = data.Rows[i]["brand"].ToString();
                     car.model = data.Rows[i]["model"].ToString();
                     car.car_type = data.Rows[i]["car_type"].ToString();
+                    if (data.Rows[i]["price"] != DBNull.Value && decimal.TryParse(data.Rows[i]["price"].ToString(), out decimal price))
+                    {
+                        car.price = price;
+                    }
+                    else
+                    {
+                        car.price = 0.0M;
+                    }
                     carList.Add(car);
                 }
                 carBindingSource2.DataSource = carList;
