@@ -21,11 +21,11 @@ namespace beerus
         {
             dgvSchedule.Rows.Clear();
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("select customer_id, car_id, rent_time, return_time, features_id, fuel_id, total_price from [Order]", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("select order_id, customer_id, car_id, rent_time, return_time, features_id, fuel_id, total_price from [Order]", db.cn);
             db.dr = db.cm.ExecuteReader();
             while (db.dr.Read())
             {
-                dgvSchedule.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[5], db.dr[6]);
+                dgvSchedule.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[5], db.dr[6], db.dr[7]);
             }
             db.cn.Close();
         }
@@ -33,13 +33,13 @@ namespace beerus
         {
             dgvCarStatus.Rows.Clear();
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("SELECT c.car_id, c.name, c.brand, c.model, c.car_type, o.return_time, " +
-                   "CASE WHEN o.return_time IS NOT NULL THEN 'Renting' ELSE 'Free' END AS Status " +
+            db.cm = new System.Data.SqlClient.SqlCommand("SELECT c.car_id, c.name, c.brand, c.model, c.car_type, o.return_time, o.rent_time," +
+                   "CASE WHEN o.rent_time IS NOT NULL AND o.return_time IS NULL THEN 'Renting' ELSE 'Free' END AS Status " +
                    "FROM Car c LEFT JOIN [Order] o ON c.car_id = o.car_id", db.cn);
             db.dr = db.cm.ExecuteReader();
             while (db.dr.Read())
             {
-                dgvCarStatus.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[5], db.dr[6]);
+                dgvCarStatus.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[6], db.dr[7]);
             }
 
             db.cn.Close();
@@ -111,12 +111,12 @@ namespace beerus
         private void dgvSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string colname = dgvSchedule.Columns[e.ColumnIndex].Name;
-            if (colname == "Confirm")
+            if (colname == "colConfirm")
             {
                 Double total = 0;
                 db._id = (int)dgvSchedule.CurrentRow.Cells[0].Value;
-                total += getFeaturePrice(dgvSchedule.CurrentRow.Cells[4].Value.ToString()) + getFuelPrice(dgvSchedule.CurrentRow.Cells[5].Value.ToString())
-                    + getCarPrice(dgvSchedule.CurrentRow.Cells[1].Value.ToString());
+                total += getFeaturePrice(dgvSchedule.CurrentRow.Cells[5].Value.ToString()) + getFuelPrice(dgvSchedule.CurrentRow.Cells[6].Value.ToString())
+                    + getCarPrice(dgvSchedule.CurrentRow.Cells[2].Value.ToString());
                 db.cn.Open();
                 db.cm = new System.Data.SqlClient.SqlCommand("update [order] set return_time=@return_time, total_price=@total_price where order_id='" + db._id + "'", db.cn);
                 db.cm.Parameters.AddWithValue("@return_time", DateTime.Now);

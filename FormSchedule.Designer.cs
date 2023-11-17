@@ -31,14 +31,6 @@
             panel1 = new Panel();
             label1 = new Label();
             dgvSchedule = new DataGridView();
-            Customer_ID = new DataGridViewTextBoxColumn();
-            CarID = new DataGridViewTextBoxColumn();
-            RentDate = new DataGridViewTextBoxColumn();
-            ReturnDate = new DataGridViewTextBoxColumn();
-            FeatureID = new DataGridViewTextBoxColumn();
-            FuelID = new DataGridViewTextBoxColumn();
-            TotalPrice = new DataGridViewTextBoxColumn();
-            Confirm = new DataGridViewButtonColumn();
             panel2 = new Panel();
             label2 = new Label();
             dgvCarStatus = new DataGridView();
@@ -49,6 +41,15 @@
             car_type = new DataGridViewTextBoxColumn();
             car_returndate = new DataGridViewTextBoxColumn();
             car_status = new DataGridViewTextBoxColumn();
+            Order_ID = new DataGridViewTextBoxColumn();
+            Customer_ID = new DataGridViewTextBoxColumn();
+            CarID = new DataGridViewTextBoxColumn();
+            RentDate = new DataGridViewTextBoxColumn();
+            ReturnDate = new DataGridViewTextBoxColumn();
+            FeatureID = new DataGridViewTextBoxColumn();
+            FuelID = new DataGridViewTextBoxColumn();
+            TotalPrice = new DataGridViewTextBoxColumn();
+            colConfirm = new DataGridViewButtonColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSchedule).BeginInit();
             panel2.SuspendLayout();
@@ -79,90 +80,21 @@
             // 
             dgvSchedule.AllowUserToAddRows = false;
             dgvSchedule.AllowUserToDeleteRows = false;
+            dgvSchedule.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvSchedule.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvSchedule.BackgroundColor = SystemColors.ButtonFace;
             dgvSchedule.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSchedule.Columns.AddRange(new DataGridViewColumn[] { Customer_ID, CarID, RentDate, ReturnDate, FeatureID, FuelID, TotalPrice, Confirm });
+            dgvSchedule.Columns.AddRange(new DataGridViewColumn[] { Order_ID, Customer_ID, CarID, RentDate, ReturnDate, FeatureID, FuelID, TotalPrice, colConfirm });
             dgvSchedule.Dock = DockStyle.Fill;
             dgvSchedule.Location = new Point(0, 94);
             dgvSchedule.Name = "dgvSchedule";
             dgvSchedule.ReadOnly = true;
             dgvSchedule.RowHeadersWidth = 51;
             dgvSchedule.RowTemplate.Height = 29;
+            dgvSchedule.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSchedule.Size = new Size(1098, 657);
             dgvSchedule.TabIndex = 1;
             dgvSchedule.CellClick += dgvSchedule_CellClick;
-            // 
-            // Customer_ID
-            // 
-            Customer_ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Customer_ID.HeaderText = "Customer_ID";
-            Customer_ID.MinimumWidth = 6;
-            Customer_ID.Name = "Customer_ID";
-            Customer_ID.ReadOnly = true;
-            Customer_ID.Width = 122;
-            // 
-            // CarID
-            // 
-            CarID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            CarID.HeaderText = "CarID";
-            CarID.MinimumWidth = 6;
-            CarID.Name = "CarID";
-            CarID.ReadOnly = true;
-            CarID.Width = 75;
-            // 
-            // RentDate
-            // 
-            RentDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            RentDate.HeaderText = "RentDate";
-            RentDate.MinimumWidth = 6;
-            RentDate.Name = "RentDate";
-            RentDate.ReadOnly = true;
-            // 
-            // ReturnDate
-            // 
-            ReturnDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ReturnDate.HeaderText = "ReturnDate";
-            ReturnDate.MinimumWidth = 6;
-            ReturnDate.Name = "ReturnDate";
-            ReturnDate.ReadOnly = true;
-            // 
-            // FeatureID
-            // 
-            FeatureID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FeatureID.HeaderText = "FeatureID";
-            FeatureID.MinimumWidth = 6;
-            FeatureID.Name = "FeatureID";
-            FeatureID.ReadOnly = true;
-            // 
-            // FuelID
-            // 
-            FuelID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            FuelID.HeaderText = "FuelID";
-            FuelID.MinimumWidth = 6;
-            FuelID.Name = "FuelID";
-            FuelID.ReadOnly = true;
-            FuelID.Width = 80;
-            // 
-            // TotalPrice
-            // 
-            TotalPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            TotalPrice.HeaderText = "TotalPrice";
-            TotalPrice.MinimumWidth = 6;
-            TotalPrice.Name = "TotalPrice";
-            TotalPrice.ReadOnly = true;
-            // 
-            // Confirm
-            // 
-            Confirm.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Confirm.HeaderText = "Confirm";
-            Confirm.MinimumWidth = 6;
-            Confirm.Name = "Confirm";
-            Confirm.ReadOnly = true;
-            Confirm.Resizable = DataGridViewTriState.True;
-            Confirm.SortMode = DataGridViewColumnSortMode.Automatic;
-            Confirm.Text = "Confirm";
-            Confirm.UseColumnTextForButtonValue = true;
-            Confirm.Width = 91;
             // 
             // panel2
             // 
@@ -259,6 +191,85 @@
             car_status.ReadOnly = true;
             car_status.Width = 78;
             // 
+            // Order_ID
+            // 
+            Order_ID.HeaderText = "Order_ID";
+            Order_ID.MinimumWidth = 6;
+            Order_ID.Name = "Order_ID";
+            Order_ID.ReadOnly = true;
+            // 
+            // Customer_ID
+            // 
+            Customer_ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Customer_ID.HeaderText = "Customer_ID";
+            Customer_ID.MinimumWidth = 6;
+            Customer_ID.Name = "Customer_ID";
+            Customer_ID.ReadOnly = true;
+            Customer_ID.Width = 122;
+            // 
+            // CarID
+            // 
+            CarID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            CarID.HeaderText = "CarID";
+            CarID.MinimumWidth = 6;
+            CarID.Name = "CarID";
+            CarID.ReadOnly = true;
+            CarID.Width = 75;
+            // 
+            // RentDate
+            // 
+            RentDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            RentDate.HeaderText = "RentDate";
+            RentDate.MinimumWidth = 6;
+            RentDate.Name = "RentDate";
+            RentDate.ReadOnly = true;
+            // 
+            // ReturnDate
+            // 
+            ReturnDate.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            ReturnDate.HeaderText = "ReturnDate";
+            ReturnDate.MinimumWidth = 6;
+            ReturnDate.Name = "ReturnDate";
+            ReturnDate.ReadOnly = true;
+            // 
+            // FeatureID
+            // 
+            FeatureID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FeatureID.HeaderText = "FeatureID";
+            FeatureID.MinimumWidth = 6;
+            FeatureID.Name = "FeatureID";
+            FeatureID.ReadOnly = true;
+            // 
+            // FuelID
+            // 
+            FuelID.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            FuelID.HeaderText = "FuelID";
+            FuelID.MinimumWidth = 6;
+            FuelID.Name = "FuelID";
+            FuelID.ReadOnly = true;
+            FuelID.Width = 80;
+            // 
+            // TotalPrice
+            // 
+            TotalPrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            TotalPrice.HeaderText = "TotalPrice";
+            TotalPrice.MinimumWidth = 6;
+            TotalPrice.Name = "TotalPrice";
+            TotalPrice.ReadOnly = true;
+            // 
+            // colConfirm
+            // 
+            colConfirm.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            colConfirm.HeaderText = "Confirm";
+            colConfirm.MinimumWidth = 6;
+            colConfirm.Name = "colConfirm";
+            colConfirm.ReadOnly = true;
+            colConfirm.Resizable = DataGridViewTriState.True;
+            colConfirm.SortMode = DataGridViewColumnSortMode.Automatic;
+            colConfirm.Text = "Confirm";
+            colConfirm.UseColumnTextForButtonValue = true;
+            colConfirm.Width = 91;
+            // 
             // FormSchedule
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -284,14 +295,6 @@
         private Panel panel1;
         private Label label1;
         private DataGridView dgvSchedule;
-        private DataGridViewTextBoxColumn Customer_ID;
-        private DataGridViewTextBoxColumn CarID;
-        private DataGridViewTextBoxColumn RentDate;
-        private DataGridViewTextBoxColumn ReturnDate;
-        private DataGridViewTextBoxColumn FeatureID;
-        private DataGridViewTextBoxColumn FuelID;
-        private DataGridViewTextBoxColumn TotalPrice;
-        private DataGridViewButtonColumn Confirm;
         private Panel panel2;
         private Label label2;
         private DataGridView dgvCarStatus;
@@ -302,5 +305,14 @@
         private DataGridViewTextBoxColumn car_type;
         private DataGridViewTextBoxColumn car_returndate;
         private DataGridViewTextBoxColumn car_status;
+        private DataGridViewTextBoxColumn Order_ID;
+        private DataGridViewTextBoxColumn Customer_ID;
+        private DataGridViewTextBoxColumn CarID;
+        private DataGridViewTextBoxColumn RentDate;
+        private DataGridViewTextBoxColumn ReturnDate;
+        private DataGridViewTextBoxColumn FeatureID;
+        private DataGridViewTextBoxColumn FuelID;
+        private DataGridViewTextBoxColumn TotalPrice;
+        private DataGridViewButtonColumn colConfirm;
     }
 }
