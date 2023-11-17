@@ -32,7 +32,7 @@ namespace beerus
             db.dr = db.cm.ExecuteReader();
             while (db.dr.Read())
             {
-                dGVCarManage.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4]);
+                dGVCarManage.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[5]);
             }
             db.cn.Close();
         }
@@ -59,6 +59,7 @@ namespace beerus
                 f.txtBrand.Text = dGVCarManage.CurrentRow.Cells[2].Value.ToString();
                 f.cmbModel.SelectedItem = dGVCarManage.CurrentRow.Cells[3].Value.ToString();
                 f.cmbType.SelectedItem = dGVCarManage.CurrentRow.Cells[4].Value.ToString();
+                f.txtPrice.Text = dGVCarManage.CurrentRow.Cells[5].Value.ToString();
                 f.btnUpdate.Enabled = true;
                 f.btnCreate.Enabled = false;
                 f.lblCreateCar.Text = "Update Car";

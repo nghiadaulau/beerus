@@ -40,25 +40,26 @@
             cmbModel = new ComboBox();
             cmbType = new ComboBox();
             btnUpdate = new Button();
+            lblPrice = new Label();
+            txtPrice = new TextBox();
             SuspendLayout();
             // 
             // lblCreateCar
             // 
             lblCreateCar.AutoSize = true;
             lblCreateCar.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCreateCar.Location = new Point(30, 12);
+            lblCreateCar.Location = new Point(26, 9);
             lblCreateCar.Name = "lblCreateCar";
-            lblCreateCar.Size = new Size(393, 67);
+            lblCreateCar.Size = new Size(317, 54);
             lblCreateCar.TabIndex = 0;
             lblCreateCar.Text = "Create New Car";
             lblCreateCar.Click += lblCreateCar_Click;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(474, 0);
-            btnExit.Margin = new Padding(3, 4, 3, 4);
+            btnExit.Location = new Point(415, 0);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(46, 29);
+            btnExit.Size = new Size(40, 22);
             btnExit.TabIndex = 1;
             btnExit.Text = "x";
             btnExit.UseVisualStyleBackColor = true;
@@ -68,45 +69,43 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(45, 148);
+            label1.Location = new Point(39, 111);
             label1.Name = "label1";
-            label1.Size = new Size(78, 20);
+            label1.Size = new Size(61, 15);
             label1.TabIndex = 2;
             label1.Text = "Car Name";
             // 
             // txtName
             // 
-            txtName.Location = new Point(45, 172);
-            txtName.Margin = new Padding(3, 4, 3, 4);
+            txtName.Location = new Point(39, 129);
             txtName.Name = "txtName";
-            txtName.Size = new Size(436, 27);
+            txtName.Size = new Size(382, 23);
             txtName.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(45, 223);
+            label2.Location = new Point(39, 167);
             label2.Name = "label2";
-            label2.Size = new Size(51, 20);
+            label2.Size = new Size(40, 15);
             label2.TabIndex = 4;
             label2.Text = "Brand";
             // 
             // txtBrand
             // 
-            txtBrand.Location = new Point(45, 247);
-            txtBrand.Margin = new Padding(3, 4, 3, 4);
+            txtBrand.Location = new Point(39, 185);
             txtBrand.Name = "txtBrand";
-            txtBrand.Size = new Size(436, 27);
+            txtBrand.Size = new Size(382, 23);
             txtBrand.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(45, 296);
+            label3.Location = new Point(39, 222);
             label3.Name = "label3";
-            label3.Size = new Size(53, 20);
+            label3.Size = new Size(42, 15);
             label3.TabIndex = 6;
             label3.Text = "Model";
             // 
@@ -114,18 +113,17 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(45, 364);
+            label4.Location = new Point(39, 273);
             label4.Name = "label4";
-            label4.Size = new Size(69, 20);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 7;
             label4.Text = "Car Type";
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(45, 459);
-            btnCreate.Margin = new Padding(3, 4, 3, 4);
+            btnCreate.Location = new Point(39, 437);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(208, 76);
+            btnCreate.Size = new Size(182, 57);
             btnCreate.TabIndex = 8;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -135,39 +133,55 @@
             // 
             cmbModel.FormattingEnabled = true;
             cmbModel.Items.AddRange(new object[] { "Mini", "Sedan", "Hatchback", "CUV Gầm Cao", "SUV Gầm Cao", "MPV Gầm thấp", "Bán tải" });
-            cmbModel.Location = new Point(45, 320);
-            cmbModel.Margin = new Padding(3, 4, 3, 4);
+            cmbModel.Location = new Point(39, 240);
             cmbModel.Name = "cmbModel";
-            cmbModel.Size = new Size(436, 28);
+            cmbModel.Size = new Size(382, 23);
             cmbModel.TabIndex = 9;
             // 
             // cmbType
             // 
             cmbType.FormattingEnabled = true;
             cmbType.Items.AddRange(new object[] { "4 seats", "5 seats", "7 seats", "7 seats", "truck" });
-            cmbType.Location = new Point(45, 400);
-            cmbType.Margin = new Padding(3, 4, 3, 4);
+            cmbType.Location = new Point(39, 291);
             cmbType.Name = "cmbType";
-            cmbType.Size = new Size(436, 28);
+            cmbType.Size = new Size(382, 23);
             cmbType.TabIndex = 10;
             // 
             // btnUpdate
             // 
             btnUpdate.Enabled = false;
-            btnUpdate.Location = new Point(273, 459);
-            btnUpdate.Margin = new Padding(3, 4, 3, 4);
+            btnUpdate.Location = new Point(239, 437);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(208, 76);
+            btnUpdate.Size = new Size(182, 57);
             btnUpdate.TabIndex = 11;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
             // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPrice.Location = new Point(39, 326);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(35, 15);
+            lblPrice.TabIndex = 12;
+            lblPrice.Text = "Price";
+            // 
+            // txtPrice
+            // 
+            txtPrice.Location = new Point(39, 344);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(382, 23);
+            txtPrice.TabIndex = 13;
+            // 
             // FormCreateCar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(517, 600);
+            ClientSize = new Size(452, 519);
+            Controls.Add(txtPrice);
+            Controls.Add(lblPrice);
             Controls.Add(btnUpdate);
             Controls.Add(cmbType);
             Controls.Add(cmbModel);
@@ -181,7 +195,6 @@
             Controls.Add(btnExit);
             Controls.Add(lblCreateCar);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormCreateCar";
             Text = "FormCreateCar";
             Load += FormCreateCar_Load;
@@ -202,5 +215,7 @@
         public Button btnUpdate;
         public Button btnCreate;
         public Label lblCreateCar;
+        private Label lblPrice;
+        public TextBox txtPrice;
     }
 }

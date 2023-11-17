@@ -23,7 +23,10 @@ namespace beerus
         {
             Dispose();
         }
-
+        private bool IsDecimal(string input)
+        {
+            return decimal.TryParse(input, out _);
+        }
         private void btnCreate_Click(object sender, EventArgs e)
         {
             var selectedModel = cmbModel.SelectedItem;
@@ -49,13 +52,18 @@ namespace beerus
             {
                 MessageBox.Show("Vui lòng chọn loại xe!");
                 return;
+            }else if (!IsDecimal(txtPrice.Text))
+            {
+                MessageBox.Show("Giá không hợp lệ. Vui lòng nhập một số.");
+                return;
             }
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("insert into car (name, brand, model, car_type) values (@name, @brand, @model, @car_type)", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("insert into car (name, brand, model, car_type, price) values (@name, @brand, @model, @car_type, @price)", db.cn);
             db.cm.Parameters.AddWithValue("@name", txtName.Text);
             db.cm.Parameters.AddWithValue("@brand", txtBrand.Text);
             db.cm.Parameters.AddWithValue("@model", selectedModel.ToString());
             db.cm.Parameters.AddWithValue("@car_type", selectedCarType.ToString());
+            db.cm.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
             db.cm.ExecuteNonQuery();
             MessageBox.Show("Car has been created");
             db.cn.Close();
@@ -71,11 +79,12 @@ namespace beerus
             var selectedModel = cmbModel.SelectedItem;
             var selectedCarType = cmbType.SelectedItem;
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("update car set name=@name,brand=@brand,model=@model,car_type=@car_type where car_id='" + db._id + "'", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("update car set name=@name,brand=@brand,model=@model,car_type=@car_type,price=@price where car_id='" + db._id + "'", db.cn);
             db.cm.Parameters.AddWithValue("@name", txtName.Text);
             db.cm.Parameters.AddWithValue("@brand", txtBrand.Text);
             db.cm.Parameters.AddWithValue("@model", selectedModel.ToString());
             db.cm.Parameters.AddWithValue("@car_type", selectedCarType.ToString());
+            db.cm.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
             db.cm.ExecuteNonQuery();
             MessageBox.Show("Car has been updated");
             db.cn.Close();
