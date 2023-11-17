@@ -44,5 +44,17 @@ namespace beerus
         {
 
         }
+
+        private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            FormSchedule f = new FormSchedule();
+            f.ShowDialog();
+        }
+
+        private void btnStatistic_Click(object sender, EventArgs e)
+        {
+            FormStatistic f = new FormStatistic();
+            f.ShowDialog();
+        }
     }
 }

@@ -58,7 +58,7 @@
             dgvOrder.ReadOnly = true;
             dgvOrder.RowHeadersWidth = 51;
             dgvOrder.RowTemplate.Height = 29;
-            dgvOrder.Size = new Size(977, 471);
+            dgvOrder.Size = new Size(852, 471);
             dgvOrder.TabIndex = 0;
             // 
             // panel1
@@ -70,12 +70,12 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(977, 77);
+            panel1.Size = new Size(852, 77);
             panel1.TabIndex = 1;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(938, 3);
+            btnExit.Location = new Point(805, 3);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(36, 34);
             btnExit.TabIndex = 2;
@@ -85,7 +85,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(718, 21);
+            btnCreate.Location = new Point(563, 21);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(106, 44);
             btnCreate.TabIndex = 1;
@@ -116,7 +116,7 @@
             dgv.ReadOnly = true;
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(977, 394);
+            dgv.Size = new Size(852, 394);
             dgv.TabIndex = 2;
             dgv.CellClick += dgv_CellClick;
             // 
@@ -190,7 +190,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(977, 471);
+            ClientSize = new Size(852, 471);
             Controls.Add(dgv);
             Controls.Add(panel1);
             Controls.Add(dgvOrder);

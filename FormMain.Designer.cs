@@ -93,6 +93,7 @@
             btnSchedule.TabIndex = 4;
             btnSchedule.Text = "Schedule";
             btnSchedule.UseVisualStyleBackColor = true;
+            btnSchedule.Click += btnSchedule_Click;
             // 
             // btnStatistic
             // 
@@ -104,6 +105,7 @@
             btnStatistic.TabIndex = 5;
             btnStatistic.Text = "Statistic";
             btnStatistic.UseVisualStyleBackColor = true;
+            btnStatistic.Click += btnStatistic_Click;
             // 
             // btnExit
             // 
@@ -120,6 +122,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1291, 920);
             Controls.Add(btnExit);
             Controls.Add(btnStatistic);

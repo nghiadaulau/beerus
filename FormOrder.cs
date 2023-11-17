@@ -30,7 +30,7 @@ namespace beerus
             db.dr = db.cm.ExecuteReader();
             while (db.dr.Read())
             {
-                dgv.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3]);
+                dgv.Rows.Add(db.dr[0], db.dr[1], db.dr[2], db.dr[3], db.dr[4], db.dr[5]);
             }
             db.cn.Close();
         }
@@ -92,6 +92,10 @@ namespace beerus
             {
                 FormDetailOrder f = new FormDetailOrder(dgv.CurrentRow.Cells[1].Value.ToString(), dgv.CurrentRow.Cells[2].Value.ToString(), dgv.CurrentRow.Cells[0].Value.ToString());
                 f.ShowDialog();
+            }
+            else if (colname == "Confirm")
+            {
+
             }
         }
     }

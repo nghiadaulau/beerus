@@ -23,13 +23,13 @@ namespace beerus
         {
             if (txtUserName.Text == "")
             {
-                MessageBox.Show("Vui lòng không để trống username!");
+                MessageBox.Show("Username cannot be empty!");
                 txtUserName.Select();
                 return;
             }
             else if (txtPassword.Text == "")
             {
-                MessageBox.Show("Vui lòng không để trống password!");
+                MessageBox.Show("Password cannot be empty!");
                 txtPassword.Select();
                 return;
             }
@@ -40,14 +40,14 @@ namespace beerus
                 db.dr = db.cm.ExecuteReader();
                 if (db.dr.HasRows)
                 {
-                    MessageBox.Show("Đăng nhập thành công");
+                    MessageBox.Show("Login Success");
                     FormMain f = new FormMain();
                     f.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng kiểm tra lại thông tin đăng nhập");
+                    MessageBox.Show("Please correct the login information");
                 }
                 db.cn.Close();
             }
