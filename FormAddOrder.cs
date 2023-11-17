@@ -15,6 +15,7 @@ namespace beerus
     public partial class FormAddOrder : Form
     {
         FormOrder formOrder = new FormOrder();
+        private string fuel = "";
         public FormAddOrder(FormOrder formOrder)
         {
             InitializeComponent();
@@ -53,13 +54,31 @@ namespace beerus
             carID.ValueMember = "car_id";
             db.cn.Close();
         }
+        private string getCheckBoxValue()
+        {
+            string result = "";
+            foreach (Control control in this.Controls)
+            {
+                if (control is CheckBox)
+                {
+                    CheckBox checkBox = (CheckBox)control;
+                    if (checkBox.Checked)
+                    {
+                        result = checkBox.Text + " " + result;
+                    }
+                }
+            }
+            return result;
+        }
         private void addOrder()
         {
             db.cn.Open();
-            db.cm = new System.Data.SqlClient.SqlCommand("insert into [order] (customer_id, car_id, rent_time) values (@customer_id, @car_id, @rent_time)", db.cn);
+            db.cm = new System.Data.SqlClient.SqlCommand("insert into [order] (customer_id, car_id, rent_time, feature, fuel) values (@customer_id, @car_id, @rent_time, @feature, @fuel)", db.cn);
             db.cm.Parameters.AddWithValue("@customer_id", coBoxCustomer.SelectedValue.ToString());
             db.cm.Parameters.AddWithValue("@car_id", carID.SelectedValue.ToString());
             db.cm.Parameters.AddWithValue("@rent_time", datetime.Value);
+            db.cm.Parameters.AddWithValue("@feature", getCheckBoxValue());
+
             db.cm.ExecuteNonQuery();
             MessageBox.Show("Order has been created");
             db.cn.Close();
@@ -95,5 +114,7 @@ namespace beerus
             formOrder.loadOrder();
             Dispose();
         }
+
+
     }
 }
